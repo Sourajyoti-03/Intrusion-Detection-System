@@ -17,8 +17,8 @@ users_col = db["users"]
 predictions_col = db["predictions"]
 
 # Load model and scaler
-model = joblib.load(r"G:\Projects\Intrusion Detection System Streamlit\best_final_model.pkl")
-scaler = joblib.load(r"G:\Projects\Intrusion Detection System Streamlit\scaler.pkl")
+model = joblib.load("best_final_model.pkl")
+scaler = joblib.load("scaler.pkl")
 
 # Session state for user
 if "logged_in" not in st.session_state:
