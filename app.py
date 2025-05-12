@@ -50,7 +50,7 @@ st.markdown("""
 
 # === LOGIN / SIGNUP PAGES ===
 if not st.session_state.logged_in:
-    st.image(r"G:\Projects\Intrusion Detection System Streamlit\Logo.png", width=200)
+    st.image("Logo.png", width=200)
     page = st.sidebar.radio("Select Page", ["🔐 Login", "📝 Signup"])
 
     if page == "🔐 Login":
