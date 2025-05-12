@@ -1,0 +1,7 @@
+,0 (No),1 (Yes)
+Logistic Regression,6173,10826
+Decision Tree,6730,10269
+Random Forest,6756,10243
+Support Vector Machine,6142,10857
+K-Nearest Neighbors,6651,10348
+Gaussian Naive Bayes,2292,14707
