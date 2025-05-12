@@ -2,20 +2,23 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
+import pymongo
 from datetime import datetime
 from pymongo import MongoClient
 import hashlib
-
+import os
+from dotenv import load_dotenv
+load_dotenv()  # This loads environment variables from the .env file
 # MongoDB connection
-client = MongoClient(
-    "mongodb url string here)
+MONGO_URI = os.getenv("MONGO_URI")
+client = pymongo.MongoClient(MONGO_URI)
 db = client["intrusion_detection"]
 users_col = db["users"]
 predictions_col = db["predictions"]
 
 # Load model and scaler
-model = joblib.load("best_final_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.load(r"G:\Projects\Intrusion Detection System Streamlit\best_final_model.pkl")
+scaler = joblib.load(r"G:\Projects\Intrusion Detection System Streamlit\scaler.pkl")
 
 # Session state for user
 if "logged_in" not in st.session_state:
@@ -47,7 +50,7 @@ st.markdown("""
 
 # === LOGIN / SIGNUP PAGES ===
 if not st.session_state.logged_in:
-    st.image("Logo.png", width=200)
+    st.image(r"G:\Projects\Intrusion Detection System Streamlit\Logo.png", width=200)
     page = st.sidebar.radio("Select Page", ["🔐 Login", "📝 Signup"])
 
     if page == "🔐 Login":
