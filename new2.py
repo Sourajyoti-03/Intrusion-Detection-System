@@ -8,7 +8,7 @@ import hashlib
 
 # MongoDB connection
 client = MongoClient(
-    "mongodb+srv://Sourajyoti:P%40ssw0rd@cluster0.jldppuo.mongodb.net/AtlasIDS?retryWrites=true&w=majority&appName=Cluster0")
+    "mongodb url string here)
 db = client["intrusion_detection"]
 users_col = db["users"]
 predictions_col = db["predictions"]
